@@ -30,7 +30,7 @@
 	</bean>
             
 	<bean id="userDao" class="dao.UserDaoimpl"
-	p:session-ref="sqlSession"> <!-- 변수에 객체 주입할 때는 -ref -->
+	p:session-ref="sqlSession"> <!-- 변수에 종속 객체 주입할 때는 -ref -->
 	</bean>
 	<bean id="LoginFormController" class="controller.LoginFormController"
 	p:userDao-ref="userDao"
@@ -46,7 +46,7 @@
 			</value>
 		</property>
 	</bean>
-	<!-- 프로퍼티즈 파일을 관리해주는 객체 ResourceBundleMessageSource -->
+	<!-- 프로퍼티즈 파일(메세지)을 관리해주는 객체 ResourceBundleMessageSource -->
 	<bean id="messageSource" 
 	class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames">

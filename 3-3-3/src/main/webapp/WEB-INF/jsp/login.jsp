@@ -15,11 +15,11 @@
 	<form:form action="login.html" method="post" modelAttribute="user">
 		<spring:hasBindErrors name="user">
 			<font color="red">
-				<c:forEach items="${errors.globalErrors }" var="err">
+				<c:forEach items="${errors.globalErrors }" var="err"><!-- globalErrors = new HashMap 컬렉션 프레임워크 map 키와 값을 가지고 있다. 프로퍼티즈와 연결 -->
 					<spring:message code="${err.code }" />
 				</c:forEach>
 			</font>
-		</spring:hasBindErrors>
+		</spring:hasBindErrors><!-- 폼에러 -->
 		<table>
 			<tr height="40px">
 				<th>사용자ID</th>
