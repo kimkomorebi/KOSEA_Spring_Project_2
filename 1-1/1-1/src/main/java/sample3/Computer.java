@@ -7,7 +7,6 @@ public class Computer implements Item {
 		this.name = name;
 	}
 
-	@Override
 	public void showName() {
 		System.out.println(name+"입니다.");
 	}

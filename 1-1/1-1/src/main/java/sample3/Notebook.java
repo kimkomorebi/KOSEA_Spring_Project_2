@@ -5,7 +5,6 @@ public class Notebook implements Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Override
 	public void showName() {
 		System.out.println(name+"입니다.");
 	}
