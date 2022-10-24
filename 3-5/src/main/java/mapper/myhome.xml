@@ -12,4 +12,15 @@
 	from user_account
 	where user_id = #{userId} and password = #{password}
 </select>
+
+<select id="getItem" resultType="model.Item"
+	parameterType="Integer">
+select item_id as itemId, item_name as itemName, price, info,
+ picture_url as pictureUrl from myitems
+ where item_id = #{id}
+</select>
+<select id="getItemList" resultType="model.Item">
+select item_id as itemId, item_name as itemName, price, info,
+ picture_url as pictureUrl from myitems
+</select>
 </mapper>

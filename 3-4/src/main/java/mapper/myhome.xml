@@ -8,7 +8,7 @@
 </insert>
 <select id="getUser" parameterType="model.User" resultType="model.User">
 	select user_id as userId, password, user_name as userName,
-	address, email, job, birthday, postcode, gender
+	address, email, job, birthday, postcode
 	from user_account
 	where user_id = #{userId} and password = #{password}
 </select>
