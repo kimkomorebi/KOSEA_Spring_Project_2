@@ -6,6 +6,9 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/3-5.css">
+<style>
+	#num {width:30px;}
+</style>
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/menu_header.jsp" %>
@@ -20,6 +23,23 @@
 				<td width="160">${item.price }</td></tr>
 			<tr height="50"><td width="80">설 명</td>
 				<td width="160">${item.info }</td></tr>
+			<tr>
+				<td colspan="2" align="center" width="230">
+					<form action="../cart/cartAdd.html">
+						<input type="hidden" name="itemId" value="${item.itemId }"/>
+						<table>
+							<tr>
+								<td>
+									<input type="number" min="1" name="quantity" value="1" id="num"/>개
+								</td>
+								<td>
+									<input type="submit" value="카트에 담기"/>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</td>
+			</tr>
 		</table>
 		</td></tr>
 </table>

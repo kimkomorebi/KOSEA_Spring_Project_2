@@ -47,7 +47,8 @@
 				</td>
 			</tr>
 		</table>
-	</form:form>
+	</form:form><br/>
+	<a href="../userentryform/userEntry.html">■ 신규 가입자 등록</a>
 	</div>
 </body>
 </html>

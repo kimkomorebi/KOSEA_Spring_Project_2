@@ -40,13 +40,13 @@
 		</property>
 	</bean>
 	<bean id="loginValidator" class="etc.LoginValidator"></bean>
+	<bean id="userEntryValidator" class="etc.UserEntryValidator"></bean>
 	<context:component-scan 
-	base-package="dao,controller"></context:component-scan>
+	base-package="dao,controller,sales"></context:component-scan>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix" value="/WEB-INF/jsp/"/>
 	        <property name="suffix" value=".jsp"/>
 	</bean>
-	
 </beans>

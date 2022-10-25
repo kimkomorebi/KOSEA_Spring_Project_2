@@ -13,8 +13,8 @@
 					<c:when test="${not empty loginUser }">
 						<font color="red">
 							È¯¿µÇÕ´Ï´Ù~<br/>
-							${loginUser.userID } ´Ô~<br/>
-							<a href="#">¡á ·Î±×¾Æ¿ô ÇÏ±â</a>
+							${loginUser.userId } ´Ô~<br/>
+							<a href="../logout/logout.html">¡á ·Î±×¾Æ¿ô ÇÏ±â</a>
 						</font>
 					</c:when>
 					<c:when test="${ empty loginUser }">
