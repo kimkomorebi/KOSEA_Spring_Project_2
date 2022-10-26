@@ -13,8 +13,8 @@ public class Cart {
 		Item pushedItem = pushedItemSet.getItem(); //Item DTO 객체 주입
 		int pushedItemId = pushedItem.getItemId();//Item DTO에서의 상품번호
 		for(ItemSet cartItemSet : this.itemList) {
-			Item cartItem = cartItemSet.getItem();//Cart 클래스의 ArrayList<ItemSet>에서 접근한 item 객체 > 장바구니 상품
-			int cartItemId = cartItem.getItemId();//Cart 클래스의 ArrayList<ItemSet>에서 접근한 item 객체 상품번호
+			Item cartItem = cartItemSet.getItem();//Cart 클래스의 ArrayList<ItemSet>에서 접근한 Item 객체 주입 > 장바구니 상품
+			int cartItemId = cartItem.getItemId();//Cart 클래스의 ArrayList<ItemSet>에서 접근한 Item 객체 상품번호
 			if(pushedItemId == cartItemId){
 				cartItemSet.addQuantity(pushedItemSet.getQuantity());
 				itemExistInCart = true;//이미 동일한 상품이 있다.
