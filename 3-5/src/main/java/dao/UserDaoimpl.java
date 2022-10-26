@@ -14,7 +14,7 @@ public class UserDaoimpl implements UserDao {
 	public void create(User user) {
 		session.insert("mapper.myhome.putUser",user);
 	}
-
+	/** 아이디와 패스워드가 같은 애를 select */
 	public User findUser(User user) {
 		return session.selectOne("mapper.myhome.getUser",user);
 	}
