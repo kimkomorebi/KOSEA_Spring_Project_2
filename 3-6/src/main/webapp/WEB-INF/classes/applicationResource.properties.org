@@ -1,0 +1,9 @@
+itemMenu.title = 관리자 - 상품 목록 화면
+itemEdit.title = 관리자 - 상품 변경 화면
+itemAdd.title = 관리자 - 상품 등록 화면
+itemDelete.title = 관리자 - 상품 삭제 화면
+itemEditForm.item.itemId = 상품 ID
+itemEditForm.item.itemName = 상품 이름
+itemEditForm.item.price = 상품 가격
+itemEditForm.item.description = 상품 설명
+itemEditForm.item.pictureUrl = 파일명
