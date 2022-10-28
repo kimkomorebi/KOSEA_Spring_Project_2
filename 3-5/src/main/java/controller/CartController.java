@@ -20,7 +20,7 @@ public class CartController {
 	@Autowired
 	private SaleCatalog saleCatalog;
 	
-	
+	/** 카트에 담은 상품 확인 페이지 콜백 메소드 */
 	@RequestMapping(value="/cart/cartConfirm.html")
 	public ModelAndView confirm(HttpSession session) {
 		Cart cart = (Cart)session.getAttribute("CART_KEY");
@@ -33,7 +33,7 @@ public class CartController {
 			mav.addObject("loginUser", loginUser);
 		return mav;
 	}
-	
+	/** 카트를 비우는 콜백 메소드 */	
 	@RequestMapping(value="/cart/cartClear.html")
 	public ModelAndView clear(HttpSession session) {
 		Cart cart = (Cart)session.getAttribute("CART_KEY");
@@ -50,6 +50,7 @@ public class CartController {
 		mav.addObject("message", "카트를 비웠습니다.");
 		return mav;
 	}
+	/** 목록에서 카트에 추가한 후 나오는 페이지 콜백 메소드 */
 	@RequestMapping(value="/cart/result.html")
 	public ModelAndView reload(HttpSession session) {
 		Cart cart = (Cart)session.getAttribute("CART_KEY");
@@ -64,7 +65,7 @@ public class CartController {
 		mav.addObject("cart", cart);
 		return mav;
 	}
-	
+	/** 카트에 담기 버튼 실행 콜백 메소드 */
 	@RequestMapping(value="/cart/cartAdd.html")
 	public ModelAndView add(Integer itemId, Integer quantity, HttpSession session) {
 		User loginUser = (User)session.getAttribute("USER_KEY");
