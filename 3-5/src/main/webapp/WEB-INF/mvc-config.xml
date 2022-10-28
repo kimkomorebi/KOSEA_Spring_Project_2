@@ -49,4 +49,12 @@
 	        <property name="prefix" value="/WEB-INF/jsp/"/>
 	        <property name="suffix" value=".jsp"/>
 	</bean>
+	<bean id="exceptionHandler" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<value>
+				exception.CartEmptyException = cartEmpty
+				exception.LoginRequiredException = dummyLogin
+			</value>
+		</property>
+	</bean>
 </beans>

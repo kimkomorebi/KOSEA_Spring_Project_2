@@ -3,5 +3,6 @@
 <configuration>
 	<mappers>
 		<mapper resource="mapper/myhome.xml"/>
+		<mapper resource="mapper/mysale.xml"/>
 	</mappers>
 </configuration>

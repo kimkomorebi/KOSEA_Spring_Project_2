@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import exception.LoginRequiredException;
 import model.Cart;
 import model.Item;
 import model.ItemSet;
@@ -66,6 +67,9 @@ public class CartController {
 	
 	@RequestMapping(value="/cart/cartAdd.html")
 	public ModelAndView add(Integer itemId, Integer quantity, HttpSession session) {
+		User loginUser = (User)session.getAttribute("USER_KEY");
+		if(loginUser == null)
+			throw new LoginRequiredException("마! 로그인 해라 마!");
 		Item item = this.saleCatalog.findById(itemId);
 		Cart cart = (Cart)session.getAttribute("CART_KEY");
 		if(cart == null) cart = new Cart();

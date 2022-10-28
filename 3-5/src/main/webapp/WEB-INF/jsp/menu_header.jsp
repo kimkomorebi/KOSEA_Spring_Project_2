@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link href="../css/3-5.css" type="text/css" rel="stylesheet">
 <div align="center">
 	<table class="header">
 		<tr>

@@ -5,8 +5,8 @@ public class SalesDetail {
 	private Integer itemId;
 	private Integer quantity;
 	private Integer saleDetailId;
-	private Sale sale;
-	private Item item;
+	private Sale sale;//Sale 객체
+	private Item item;//Item 객체
 	private String buy_date;
 	
 	public SalesDetail(Sale sale, Integer saleDetailId,
@@ -16,7 +16,10 @@ public class SalesDetail {
 		this.quantity = itemSet.getQuantity();
 	}
 	
-	
+	public Item getItem() {
+		return item;
+	}
+
 	public String getBuy_date() {
 		return buy_date;
 	}

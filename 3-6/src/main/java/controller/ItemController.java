@@ -15,6 +15,15 @@ public class ItemController {
 	@Autowired
 	private ItemDao itemDao;
 	
+	@RequestMapping(value="/item.confirm.html")
+	public ModelAndView confirm(Integer itemId) {
+		ModelAndView mav = new ModelAndView("delete");
+		Item item = this.itemDao.findById(itemId);
+		mav.addObject(item);//검색결과를 jsp에 주입한다.
+		mav.addObject("imageName", item.getItemName());
+		return mav;
+	}
+	
 	@RequestMapping(value="/item/index.html")
 	public ModelAndView index() {
 		List<Item> itemList = this.itemDao.findAll();
