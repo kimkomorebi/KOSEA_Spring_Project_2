@@ -12,6 +12,16 @@ public class ItemDaoImpl implements ItemDao {
 	@Autowired
 	private SqlSession session; 
 	
+	
+	public List<Item> findByName(String name) {
+		return session.selectList("mapper.myhome.findItem",name);
+	}
+	public void update(Item item) {
+		session.update("mapper.myhome.updateItem", item);
+	}
+	public void delete(Integer id) {
+		session.delete("mapper.myhome.deleteItem",id);
+	}
 	public void create(Item item) {
 		session.insert("mapper.myhome.putItem", item);
 	}

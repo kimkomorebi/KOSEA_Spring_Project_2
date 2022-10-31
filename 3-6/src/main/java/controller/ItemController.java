@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,15 +22,60 @@ public class ItemController {
 	@Autowired
 	private ItemDao itemDao;
 	
+	@RequestMapping(value="/item/search.html")
+	public ModelAndView findByName(String itemName) {
+		if(itemName == null || itemName.equals("")) {
+			return this.index();//목록을 출력한다.
+		}//이름이 없는 경우
+		List<Item> itemList = this.itemDao.findByName(itemName);
+		if(itemList == null || itemList.isEmpty()) {
+			return this.index();//목록을 출력한다
+		}//조회 결과가 없는 경우
+		ModelAndView mav = new ModelAndView("index");
+		mav.addObject("itemList",itemList);
+		return mav;
+	}
 	
+	@RequestMapping(value="/item/update.html")
+	public ModelAndView update(Item item, HttpServletRequest request) throws Exception {
+		ServletContext ctx = request.getSession().getServletContext();
+		String path = ctx.getRealPath("/upload");
+		String encType = "euc-kr";
+		int maxSize = 5 * 1024 * 1024; 
+		MultipartRequest multipart = new MultipartRequest(
+				request, path, maxSize, encType, new DefaultFileRenamePolicy());
+		String fileName = multipart.getFilesystemName("pictureUrl");//업로드
+		item.setItemId(Integer.parseInt(multipart.getParameter("itemId")));
+		item.setItemName(multipart.getParameter("itemName"));
+		item.setPrice(Integer.parseInt(multipart.getParameter("price")));
+		item.setInfo(multipart.getParameter("info"));
+		if(fileName != null) {
+			item.setPictureUrl(fileName);
+		}//이미지 이름이 다른 경우! 즉 이미지를 변경하는 경우
+		this.itemDao.update(item);
+		return this.index();
+	}
 	
+	@RequestMapping(value="/item/edit.html")
+	public ModelAndView edit(Integer itemId) {
+		ModelAndView mav = new ModelAndView("update");
+		Item item = this.itemDao.findById(itemId);
+		mav.addObject(item);
+		return mav;
+	}
 	
-	@RequestMapping(value="/item.confirm.html")
+	@RequestMapping(value="/item/delete.html")
+	public ModelAndView delete(Integer itemId) {
+		this.itemDao.delete(itemId);
+		return index();//삭제 후 목록을 출력 (아래 메소드명)
+	}
+	
+	@RequestMapping(value="/item/confirm.html")
 	public ModelAndView confirm(Integer itemId) {
 		ModelAndView mav = new ModelAndView("delete");
 		Item item = this.itemDao.findById(itemId);
 		mav.addObject(item);//검색결과를 jsp에 주입한다.
-		mav.addObject("imageName", item.getItemName());
+		mav.addObject("imageName", item.getPictureUrl());
 		return mav;
 	}
 	@RequestMapping(value="/item/register.html")

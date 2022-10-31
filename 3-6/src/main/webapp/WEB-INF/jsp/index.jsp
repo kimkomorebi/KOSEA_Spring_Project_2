@@ -33,7 +33,7 @@
 						<f:formatNumber type="currency" currencySymbol="￦" value="${item.price }">
 						</f:formatNumber>원
 					</td>
-					<td align="center"><a href="">상품 편집</a></td>
+					<td align="center"><a href="edit.html?itemId=${item.itemId }">상품 편집</a></td>
 					<td align="center"><a href="confirm.html?itemId=${item.itemId }">상품 삭제</a></td>
 				</tr>
 				</c:forEach>
