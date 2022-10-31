@@ -12,6 +12,9 @@ public class ItemDaoImpl implements ItemDao {
 	@Autowired
 	private SqlSession session; 
 	
+	public void create(Item item) {
+		session.insert("mapper.myhome.putItem", item);
+	}
 	public Item findById(Integer id) {
 		Item item = session.selectOne(
 				"mapper.myhome.getItem",id);

@@ -16,7 +16,7 @@
 			<h2><spring:message code="itemMenu.title"/></h2>
 			상품명 검색 <input type="text" name="itemName"/>
 			<input type="submit" value="검 색"/>
-			<a href="create.html">상품 등록</a>
+			<a href="create.html">상품 등록</a><br/>
 			<table border="1">
 				<tr class="header">
 					<th align="center" width="80">상품ID</th>
