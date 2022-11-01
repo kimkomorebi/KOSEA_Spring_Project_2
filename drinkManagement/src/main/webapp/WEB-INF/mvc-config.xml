@@ -13,7 +13,7 @@
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
 	<bean id="datasource"
-	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 			p:driverClassName="oracle.jdbc.driver.OracleDriver"
 			p:url="jdbc:oracle:thin:@127.0.0.1:1521/xe"
 			p:username="hr"
@@ -42,6 +42,7 @@
 	<context:component-scan 
 	base-package="dao,controller">
 	</context:component-scan>
+
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix" value="/WEB-INF/jsp/"/>
