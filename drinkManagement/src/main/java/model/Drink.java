@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 
 public class Drink {
 	private Integer drinkNum;
@@ -15,11 +14,8 @@ public class Drink {
 	private String orderTime;
 	private Integer orderCount;
 	private Integer totalPrice;
-	private ArrayList<DrinkSet> drinkList = new ArrayList<DrinkSet>();
 	
-	public ArrayList<DrinkSet> getDrinkList() {
-		return drinkList;
-	}
+	
 	public Integer getDrinkNum() {
 		return drinkNum;
 	}

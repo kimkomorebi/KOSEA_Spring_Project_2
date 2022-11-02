@@ -11,10 +11,23 @@
 <title>장바구니</title>
 </head>
 <body>
-	<c:forEach items="${drinkList.drinkList }" var="drinkSet">
+	<c:forEach items="${drinkSet }" var="drinkSet">
 		<p>${drinkSet.drinkName }</p>
 		<p>${drinkSet.orderCount }</p>
 		<p></p>
 	</c:forEach>
+	<div align="center">
+		<h3>장바구니 리스트</h3>
+		<table border="1">
+			<tr>
+				<th>음료명</th>
+				<th>주문 갯수</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

@@ -40,7 +40,7 @@
 	class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
 	</bean>
 	<context:component-scan 
-	base-package="dao,controller">
+	base-package="dao,controller,model">
 	</context:component-scan>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

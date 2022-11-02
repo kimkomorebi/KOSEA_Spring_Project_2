@@ -13,7 +13,8 @@
 </head>
 <body>
 	<%@ include file="menu_header.jsp" %>
-	<form:form modelAttribute="" action="cartAdd.html" method="post">
+	<form:form modelAttribute="drink" action="cartAdd.html" method="post">
+		
 		<div align="center">
 			<table border="1">
 				<tr>
@@ -26,6 +27,7 @@
 				</tr>
 				<c:forEach items="${drinkList }" var="drink">
 					<tr>
+						<input type="hidden" value="${drink.drinkNum }" name="drinkNum"/>
 						<td class="menuInfo">${drink.drinkName }</td>
 						<td class="menuInfo">${drink.drinkSize }</td>
 						<td class="menuInfo">${drink.price }</td>
