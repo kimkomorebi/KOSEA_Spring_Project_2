@@ -12,4 +12,12 @@
 	select drink_num as drinkNum, drink_name as drinkName, drink_size as drinkSize,
 	price, origin, info from drink_menu_tbl
 </select>
+<select id="getUser" parameterType="model.User" resultType="model.User">
+	select user_id as userId, password, user_name as userName,
+	address, email, job, birthday, postcode
+	from user_account
+	where user_id = #{userId} and password = #{password}
+</select>
+
+
 </mapper>

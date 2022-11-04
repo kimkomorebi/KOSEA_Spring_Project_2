@@ -8,29 +8,12 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>장바구니</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-		<div align="center">
-		<h3>장바구니 리스트</h3>
-		<table border="1">
-			<tr>
-				<th>음료명</th>
-				<th>주문 갯수</th>
-			</tr>
-			<c:forEach items="${drinkSet.drinkList}" var="drinkSet">
-
-				<tr>
-					<td>${drinkSet.drink.drinkName }</td>
-					<td>${drinkSet.orderCount }</td>
-				</tr>
-			</c:forEach>
-		</table>
+		<%@ include file="../menu_header.jsp" %>
+	<div align="center" class="body">
+		<h2>로그인 결과</h2>
+		환영합니다~ ${login.userName }님.
 	</div>
-	<br/>
-	<a href="../drink/index.html">메뉴 리스트로 돌아가기</a>
-
-	
-</body>
 </html>

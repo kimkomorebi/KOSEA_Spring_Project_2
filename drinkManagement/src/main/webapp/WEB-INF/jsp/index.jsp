@@ -13,8 +13,7 @@
 </head>
 <body>
 	<%@ include file="menu_header.jsp" %>
-	<form:form modelAttribute="drink" action="cartAdd.html" method="post">
-		
+	
 		<div align="center">
 			<table border="1">
 				<tr>
@@ -27,6 +26,7 @@
 				</tr>
 				<c:forEach items="${drinkList }" var="drink">
 					<tr>
+					<form:form action="../drink/cartAdd.html" method="get">
 						<input type="hidden" value="${drink.drinkNum }" name="drinkNum"/>
 						<td class="menuInfo">${drink.drinkName }</td>
 						<td class="menuInfo">${drink.drinkSize }</td>
@@ -35,10 +35,12 @@
 						<td class="menuInfo">${drink.info }</td>
 						<td class="menuInfo"><input type="number" min="1" name="orderCount" value="1" id="orderCount"></td>
 						<td class="menuInfo"><input type="submit" value="장바구니 담기"></td>
+					</form:form>
 					</tr>
-				</c:forEach>
+					</c:forEach>
+				
 			</table>
 		</div>
-	</form:form>
+	
 </body>
 </html>
